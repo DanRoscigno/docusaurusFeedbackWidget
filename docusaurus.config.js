@@ -67,6 +67,14 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+        'docusaurus-pushfeedback',{
+            project: 'r8ld73n4am'
+        }
+    ]
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({

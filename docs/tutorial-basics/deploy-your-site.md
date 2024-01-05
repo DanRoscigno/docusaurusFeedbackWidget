@@ -1,8 +1,16 @@
 ---
 sidebar_position: 5
 ---
+import Feedback from '@site/src/components/Feedback';
 
 # Deploy your site
+
+<Feedback 
+   event="survey_admin_quickstart"
+   question="Did you set up the admin successfully?"
+   positiveQuestion="Is there anything that should improved?"
+   negativeQuestion="Please describe the issue you faced."
+/>
 
 Docusaurus is a **static-site-generator** (also called **[Jamstack](https://jamstack.org/)**).
 

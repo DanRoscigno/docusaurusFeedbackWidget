@@ -7,7 +7,7 @@ import EditThisPage from '@theme/EditThisPage';
 import TagsListInline from '@theme/TagsListInline';
 
 import styles from './styles.module.css';
-import DocsRating from '../../../../core/DocsRating';
+import DocsRating from '../../../components/DocsRating';
 
 function TagsRow(props) {
   return (

@@ -43,11 +43,11 @@ export default function Feedback ({
 
   function submitFeedback (e, feedback = null) {
     if (isBrowser) {
-      if (window.pausible) {
+      if (window.plausible) {
         if (showForm) {
           setLoading(true);
         }
-        window.pausible.track(event, {
+        window.plausible.track(event, {
           url: location.pathname,
           label: document.title,
           feedback: (feedback !== null && feedback) || (feedback === null && positiveFeedback) ? 'yes' : 'no',

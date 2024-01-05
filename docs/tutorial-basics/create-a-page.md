@@ -4,6 +4,8 @@ sidebar_position: 1
 
 # Create a Page
 
+<button class="plausible-event-name=Feedback">Click Me</button>
+
 Add **Markdown or React** files to `src/pages` to create a **standalone page**:
 
 - `src/pages/index.js` → `localhost:3000/`

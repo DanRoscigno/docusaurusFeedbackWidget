@@ -67,13 +67,7 @@ const config = {
     ],
   ],
 
-  plugins: [
-    [
-        'docusaurus-pushfeedback',{
-            project: 'r8ld73n4am'
-        }
-    ]
-  ],
+  scripts: [{src: 'https://plausible.io/js/script.js', defer: true, 'data-domain': 'danroscigno.github.io'}],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */

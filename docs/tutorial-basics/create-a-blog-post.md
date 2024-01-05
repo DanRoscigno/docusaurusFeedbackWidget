@@ -1,8 +1,16 @@
 ---
 sidebar_position: 3
 ---
+import Feedback from '@site/src/components/Feedback';
 
 # Create a Blog Post
+
+<Feedback 
+   event="survey_admin_quickstart"
+   question="Did you set up the admin successfully?"
+   positiveQuestion="Is there anything that should improved?"
+   negativeQuestion="Please describe the issue you faced."
+/>
 
 Docusaurus creates a **page for each blog post**, but also a **blog index page**, a **tag system**, an **RSS** feed...
 

@@ -69,6 +69,8 @@ const config = {
 
   scripts: [{src: 'https://plausible.io/js/script.tagged-events.js', defer: true, 'data-domain': 'danroscigno.github.io'}],
 
+  plugins: ['docusaurus-plugin-sass'],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({

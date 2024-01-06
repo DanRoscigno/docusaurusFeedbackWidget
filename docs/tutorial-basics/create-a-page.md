@@ -2,11 +2,7 @@
 sidebar_position: 1
 ---
 
-import ControlledComponent from '@site/src/components/ControlledComponent';
-
 # Create a Page
-
-<ControlledComponent />
 
 Add **Markdown or React** files to `src/pages` to create a **standalone page**:
 

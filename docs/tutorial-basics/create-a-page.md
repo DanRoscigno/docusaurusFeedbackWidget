@@ -6,7 +6,7 @@ sidebar_position: 1
 
 <button class="plausible-event-name=Feedback plausible-event-sentiment=Positive">Happy</button>
 
-<button class="plausible-event-name=Feedback plausible-event-sentiment=Negative">Sad</button>
+<button class="plausible-event-name=Feedback plausible-event-page=create-a-page plausible-event-sentiment=Negative">Sad</button>
 
 
 Add **Markdown or React** files to `src/pages` to create a **standalone page**:

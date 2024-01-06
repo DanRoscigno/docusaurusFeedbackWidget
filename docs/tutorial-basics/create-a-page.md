@@ -2,12 +2,11 @@
 sidebar_position: 1
 ---
 
+import ControlledComponent from '@site/src/components/ControlledComponent';
+
 # Create a Page
 
-<button class="plausible-event-name=Feedback plausible-event-sentiment=Positive">Happy</button>
-
-<button class="plausible-event-name=Feedback plausible-event-page=create-a-page plausible-event-sentiment=Negative">Sad</button>
-
+<ControlledComponent />
 
 Add **Markdown or React** files to `src/pages` to create a **standalone page**:
 

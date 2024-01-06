@@ -43,6 +43,7 @@ export default function Feedback ({
 
   function submitFeedback (e, feedback = null) {
     if (isBrowser) {
+      window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
       if (window.plausible) {
         if (showForm) {
           setLoading(true);
@@ -65,6 +66,8 @@ export default function Feedback ({
           resetForm();
         }
       }
+        plausible('Feedback', {props: {page: location.pathname}})
+
     }
   }
 

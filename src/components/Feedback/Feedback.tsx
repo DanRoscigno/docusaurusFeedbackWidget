@@ -103,7 +103,7 @@ export const Feedback = ({ metadata }: { metadata: any }) => {
   }
 
   return (
-    <div className={styles.feedback} id={'feedback'}>
+    <div className={"styles.feedback plausible-event-name=Feedback"} id={'feedback'}>
       <div className={styles.form}>
         <div className={styles.topSection}>
           <h3>What did you think of this doc?</h3>

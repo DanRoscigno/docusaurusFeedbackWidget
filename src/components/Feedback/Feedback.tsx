@@ -27,7 +27,7 @@ export const Feedback = ({ metadata }: { metadata: any }) => {
     }
 
     const sendData = async () => {
-      const myHeaders = new Headers();
+/*      const myHeaders = new Headers();
       myHeaders.append('Content-Type', 'application/json');
 
       const raw = JSON.stringify({
@@ -39,7 +39,7 @@ export const Feedback = ({ metadata }: { metadata: any }) => {
           url: window.location.href,
         },
       });
-
+*/
 
       // <script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script>
 
@@ -112,17 +112,17 @@ export const Feedback = ({ metadata }: { metadata: any }) => {
                 <p>
                   If you need help with the issue that led to this low score, you can create a{' '}
                   <a
-                    href="https://github.com/hasura/graphql-engine/issues/new/choose"
+                    href="https://github.com/starrocks/starrocks/issues/new/choose"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     GitHub issue
                   </a>{' '}
                   if you think this is a bug, or check out our{' '}
-                  <a href="https://hasura.io/discord" target="_blank" rel="noopener noreferrer">
-                    Discord server
+                  <a href="https://join.slack.com/t/starrocks/shared_invite/zt-z5zxqr0k-U5lrTVlgypRIV8RbnCIAzg" target="_blank" rel="noopener noreferrer">
+                    Slack workplace
                   </a>
-                  , where Hasurians and community users are ready to engage.
+                  , where the community and devs are ready to engage.
                 </p>
               )}
             </div>

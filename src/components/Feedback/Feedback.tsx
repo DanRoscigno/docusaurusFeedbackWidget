@@ -26,7 +26,6 @@ export const Feedback = ({ metadata }: { metadata: any }) => {
       return;
     }
 
-    /*
     const sendData = async () => {
       const myHeaders = new Headers();
       myHeaders.append('Content-Type', 'application/json');
@@ -48,23 +47,24 @@ export const Feedback = ({ metadata }: { metadata: any }) => {
         redirect: 'follow',
       };
 
-      fetch('https://us-central1-websitecloud-352908.cloudfunctions.net/docs-feedback', requestOptions)
-        .then(response => response.text())
-        .catch(error => console.error('error', error));
-    };
+      // <script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script>
 
-    if (!window.location.hostname.includes('hasura.io')) {
-      alert(
-        'Hey! We like that you like our docs and chose to use them 🎉\n\nHowever, you might want to remove the feedback component or modify the route you hit, lest you want us reading what people think of your site ✌️'
-      );
+      const plausibleScript = document.createElement("script")
+      plausibleScript.src = "https://plausible.io/js/script.manual.js"
+      plausibleScript.setAttribute("data-domain", "danroscigno.github.io")
+      plausibleScript.defer = true
+      document.head.appendChild(plausibleScript)
+
+      window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
+
+      plausible('Feedback', {callback: navigateFn, props: {details: requestOptions}})
+
       setRating(null);
       setNotes(null);
       setIsSubmitSuccess(true);
-      return;
     } 
 
     sendData();
-    */
 
     return;
   };

@@ -26,6 +26,7 @@ export const Feedback = ({ metadata }: { metadata: any }) => {
       return;
     }
 
+    /*
     const sendData = async () => {
       const myHeaders = new Headers();
       myHeaders.append('Content-Type', 'application/json');
@@ -60,9 +61,10 @@ export const Feedback = ({ metadata }: { metadata: any }) => {
       setNotes(null);
       setIsSubmitSuccess(true);
       return;
-    }
+    } 
 
     sendData();
+    */
 
     return;
   };

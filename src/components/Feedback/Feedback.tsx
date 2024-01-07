@@ -40,12 +40,6 @@ export const Feedback = ({ metadata }: { metadata: any }) => {
         },
       });
 
-      const requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow',
-      };
 
       // <script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script>
 
@@ -57,7 +51,7 @@ export const Feedback = ({ metadata }: { metadata: any }) => {
 
       window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
 
-      plausible('Feedback', {callback: navigateFn, props: {details: raw}})
+      plausible('Feedback', {callback: navigateFn, props: {sentiment: "ugh"}})
 
       setRating(null);
       setNotes(null);

@@ -27,19 +27,6 @@ export const Feedback = ({ metadata }: { metadata: any }) => {
     }
 
     const sendData = async () => {
-/*      const myHeaders = new Headers();
-      myHeaders.append('Content-Type', 'application/json');
-
-      const raw = JSON.stringify({
-        feedback: {
-          isHelpful: rating >= 4 ? `👍` : `👎`,
-          score: rating,
-          notes,
-          pageTitle: document.title,
-          url: window.location.href,
-        },
-      });
-*/
 
       // <script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script>
 

@@ -51,7 +51,7 @@ export const Feedback = ({ metadata }: { metadata: any }) => {
 
       window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
 
-      plausible('Feedback', {callback: navigateFn, props: {sentiment: "ugh"}})
+      plausible('Feedback', {props: {'sentiment': 'ugh'}})
 
       setRating(null);
       setNotes(null);

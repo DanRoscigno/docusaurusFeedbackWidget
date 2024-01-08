@@ -48,6 +48,7 @@ export const Feedback = ({ metadata }: { metadata: any }) => {
 
       plausible('Feedback', {props: {sentiment: rating + '/5', page: window.location.pathname, text: notes}})
 
+      window.gtag("config", "G-NTGS7YWWQ1");
       window.gtag("event", "Feedback", { sentiment: rating + '/5', page: window.location.pathname, text: notes});
 
       setRating(null);

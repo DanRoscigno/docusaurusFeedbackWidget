@@ -38,7 +38,17 @@ export const Feedback = ({ metadata }: { metadata: any }) => {
 
       window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
 
+
+      /*
+        * maybe we need this also:
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+        <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+      */
+      window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+
       plausible('Feedback', {props: {'sentiment': rating, page: window.location.pathname, text: notes}})
+
+      window.gtag("event", "Feedback", { sentiment: rating + '/5', page: window.location.pathname, text: notes});
 
       setRating(null);
       setNotes(null);

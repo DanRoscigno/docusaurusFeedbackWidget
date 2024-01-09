@@ -69,7 +69,18 @@ const config = {
 
   scripts: [{src: 'https://plausible.io/js/script.tagged-events.js', defer: true, 'data-domain': 'danroscigno.github.io'}],
 
-  plugins: ['docusaurus-plugin-sass'],
+  plugins: [
+    'docusaurus-plugin-sass',
+    [
+      "posthog-docusaurus",
+      {
+        apiKey: "phc_Krs7r8xNYU3OeIItMy5lOoPcTnxJmrX5zYn5JMp2izy",
+        appUrl: "https://app.posthog.com", // optional
+        enableInDevelopment: false, // optional
+        // other options are passed to posthog-js init as is
+      },
+    ],
+  ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */

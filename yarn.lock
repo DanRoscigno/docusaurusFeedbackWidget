@@ -4048,6 +4048,11 @@ feed@^4.2.2:
   dependencies:
     xml-js "^1.6.11"
 
+fflate@^0.4.1:
+  version "0.4.8"
+  resolved "https://registry.yarnpkg.com/fflate/-/fflate-0.4.8.tgz#f90b82aefbd8ac174213abb338bd7ef848f0f5ae"
+  integrity sha512-FJqqoDBR00Mdj9ppamLa/Y7vxm+PRmNWA67N846RvsoYVMKB4q3y/de5PA7gUmRMYK/8CMz2GDZQmCRN1wBcWA==
+
 file-loader@^6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-6.2.0.tgz#baef7cf8e1840df325e4390b4484879480eebe4d"
@@ -6755,6 +6760,18 @@ postcss@^8.4.17, postcss@^8.4.21, postcss@^8.4.26:
     nanoid "^3.3.7"
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
+
+posthog-docusaurus@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/posthog-docusaurus/-/posthog-docusaurus-2.0.0.tgz#8b8ac890a2d780c8097a1a9766a3d24d2a1f1177"
+  integrity sha512-nDSTIhmH/Fexv347Gx6wBCE97Z+fZTj0p/gqVYAaolMwSdVuzwyFWcFA+aW9uzA5Y5hjzRwwKJJOrIv8smkYkA==
+
+posthog-js@^1.97.1:
+  version "1.97.1"
+  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.97.1.tgz#597b680f449ae6d00b6db9426b8d37996f666020"
+  integrity sha512-N5r7sm4EiSxBgFTZuReR7wvHgzK/UkPbIsy/nZuIexLD+oa94ZQFNY/i1o8utDNmXHFWVKv4rwFmzRmPZYc8Zw==
+  dependencies:
+    fflate "^0.4.1"
 
 pretty-error@^4.0.0:
   version "4.0.0"

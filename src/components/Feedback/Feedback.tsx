@@ -1,5 +1,8 @@
 import React, { ReactNode, useState } from 'react';
 import styles from './styles.module.scss';
+import posthog from 'posthog-js'
+posthog.init('phc_Krs7r8xNYU3OeIItMy5lOoPcTnxJmrX5zYn5JMp2izy', { api_host: 'https://app.posthog.com' })
+
 export const Feedback = ({ metadata }: { metadata: any }) => {
   const [rating, setRating] = useState<1 | 2 | 3 | 4 | 5 | null>(null);
   const [notes, setNotes] = useState<string | null>(null);
@@ -47,6 +50,9 @@ export const Feedback = ({ metadata }: { metadata: any }) => {
       window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
 
       plausible('Feedback', {props: {sentiment: rating + '/5', page: window.location.pathname, text: notes}})
+      
+      posthog.capture('Feedback', {sentiment: rating + '/5', page: window.location.pathname, text: notes});
+
 
       window.gtag("config", "G-NTGS7YWWQ1");
       window.gtag("event", "Feedback", { sentiment: rating + '/5', page: window.location.pathname, text: notes});

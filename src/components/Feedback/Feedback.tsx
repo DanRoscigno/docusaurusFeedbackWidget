@@ -46,9 +46,7 @@ export const Feedback = ({ metadata }: { metadata: any }) => {
       */
       window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
 
-      //plausible('Feedback', {props: {sentiment: rating + '/5', page: window.location.pathname, text: notes}})
-      //
-      plausible('Feedback', {props: {result: 'r: ' + rating + '/5, p: ' + window.location.pathname + ' n: ' + notes}})
+      plausible('Feedback', {props: {sentiment: rating + '/5', page: window.location.pathname, text: notes}})
 
       window.gtag("config", "G-NTGS7YWWQ1");
       window.gtag("event", "Feedback", { sentiment: rating + '/5', page: window.location.pathname, text: notes});

@@ -1,15 +1,13 @@
 import React, { ReactNode, useState } from 'react';
-import styles from './styles.module.scss';
+import styles from './styles.module.css';
 import posthog from 'posthog-js'
-posthog.init('phc_Krs7r8xNYU3OeIItMy5lOoPcTnxJmrX5zYn5JMp2izy', { api_host: 'https://app.posthog.com' })
-
 export const Feedback = ({ metadata }: { metadata: any }) => {
   const [rating, setRating] = useState<1 | 2 | 3 | 4 | 5 | null>(null);
   const [notes, setNotes] = useState<string | null>(null);
   const [errorText, setErrorText] = useState<string | null>(null);
   const [hoveredScore, setHoveredScore] = useState<Number | null>(null);
   const [textAreaLabel, setTextAreaLabel] = useState<ReactNode | null>(null);
-  const [textAreaPlaceholder, setTextAreaPlaceholder] = useState<string>('This section is optional ✌️');
+  const [textAreaPlaceholder, setTextAreaPlaceholder] = useState<string>('This section is optional');
   const [isSubmitSuccess, setIsSubmitSuccess] = useState<boolean>(false);
 
   const submitDisabled = rating === null || (rating < 4 && (notes === null || notes === ''));
@@ -24,45 +22,51 @@ export const Feedback = ({ metadata }: { metadata: any }) => {
 
     if (rating < 4 && notes === null) {
       setErrorText(
-        "Because this doc wasn't up to scratch please provide us with some feedback of where we can improve."
+        "Because this doc wasn't perfect, please provide us with some feedback of where we can improve."
       );
       return;
     }
 
     const sendData = async () => {
-
-      // <script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script>
-
-      const plausibleScript = document.createElement("script")
-      plausibleScript.src = "https://plausible.io/js/script.manual.js"
-      plausibleScript.setAttribute("data-domain", "danroscigno.github.io")
-      plausibleScript.defer = true
-      document.head.appendChild(plausibleScript)
-
-      window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
-
-
-      /*
-        * maybe we need this also:
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-        <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
-      */
-      window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
-
-      plausible('Feedback', {props: {sentiment: rating + '/5', page: window.location.pathname, text: notes}})
-      
+      posthog.init('phc_Krs7r8xNYU3OeIItMy5lOoPcTnxJmrX5zYn5JMp2izy', {
+        api_host: 'https://app.posthog.com',
+        autocapture: false,
+      })
       posthog.capture('Feedback', {sentiment: rating + '/5', page: window.location.pathname, text: notes});
 
+      // if you like Plausible, then uncomment the following block (the packages are already added to package.json):
+      /*
 
-      window.gtag("config", "G-NTGS7YWWQ1");
-      window.gtag("event", "Feedback", { sentiment: rating + '/5', page: window.location.pathname, text: notes});
+       const plausibleScript = document.createElement("script")
+       plausibleScript.src = "https://plausible.io/js/script.manual.js"
+       plausibleScript.setAttribute("data-domain", "danroscigno.github.io")
+       plausibleScript.defer = true
+       document.head.appendChild(plausibleScript)
+ 
+       window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
+       plausible('Feedback', {props: {sentiment: rating + '/5', page: window.location.pathname, text: notes}})
 
-      setRating(null);
-      setNotes(null);
-      setIsSubmitSuccess(true);
-    } 
+       */
+ 
+    // If you like Google Analytics uncomment the following block:
+    /*
 
-    sendData();
+       window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+       window.gtag("config", "G-NTGS7YWWQ1");
+       window.gtag("event", "Feedback", { sentiment: rating + '/5', page: window.location.pathname, text: notes});
+    */
+
+    };
+
+    sendData()
+      .then(() => {
+        setRating(null);
+        setNotes(null);
+        setIsSubmitSuccess(true);
+      })
+      .catch(e => {
+        console.error(e);
+      });
 
     return;
   };
@@ -83,7 +87,7 @@ export const Feedback = ({ metadata }: { metadata: any }) => {
           <p>Real human beings read every single review.</p>
         </>
       );
-      setTextAreaPlaceholder('This section is required... how can we do better? ✍️');
+      setTextAreaPlaceholder('This section is required... how can we do better?');
     }
     if (scoreItem >= 4) {
       setTextAreaLabel(
@@ -93,7 +97,7 @@ export const Feedback = ({ metadata }: { metadata: any }) => {
           <p>Real human beings read every single review.</p>
         </>
       );
-      setTextAreaPlaceholder('This section is optional ✌️');
+      setTextAreaPlaceholder('This section is optional');
     }
   };
 
@@ -103,7 +107,7 @@ export const Feedback = ({ metadata }: { metadata: any }) => {
   }
 
   return (
-    <form className={styles.feedback} id={'feedback'}>
+    <div className={styles.feedback} id={'feedback'}>
       <div className={styles.form}>
         <div className={styles.topSection}>
           <h3>What did you think of this doc?</h3>
@@ -179,6 +183,6 @@ export const Feedback = ({ metadata }: { metadata: any }) => {
           </div>
         </div>
       </div>
-    </form>
+    </div>
   );
 };

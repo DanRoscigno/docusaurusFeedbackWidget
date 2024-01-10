@@ -71,15 +71,6 @@ const config = {
 
   plugins: [
     'docusaurus-plugin-sass',
-    [
-      "posthog-docusaurus",
-      {
-        apiKey: "phc_Krs7r8xNYU3OeIItMy5lOoPcTnxJmrX5zYn5JMp2izy",
-        appUrl: "https://app.posthog.com", // optional
-        enableInDevelopment: false, // optional
-        // other options are passed to posthog-js init as is
-      },
-    ],
   ],
 
   themeConfig:

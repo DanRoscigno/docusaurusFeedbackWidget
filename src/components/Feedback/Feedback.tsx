@@ -28,7 +28,7 @@ export const Feedback = ({ metadata }: { metadata: any }) => {
     }
 
     const sendData = async () => {
-      posthog.init('phc_Krs7r8xNYU3OeIItMy5lOoPcTnxJmrX5zYn5JMp2izy', {
+      posthog.init('your_API_key', {
         api_host: 'https://app.posthog.com',
         autocapture: false,
         persistence: 'memory',
@@ -40,7 +40,7 @@ export const Feedback = ({ metadata }: { metadata: any }) => {
 
        const plausibleScript = document.createElement("script")
        plausibleScript.src = "https://plausible.io/js/script.manual.js"
-       plausibleScript.setAttribute("data-domain", "danroscigno.github.io")
+       plausibleScript.setAttribute("data-domain", "your.domain")
        plausibleScript.defer = true
        document.head.appendChild(plausibleScript)
  
@@ -53,7 +53,7 @@ export const Feedback = ({ metadata }: { metadata: any }) => {
     /*
 
        window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
-       window.gtag("config", "G-NTGS7YWWQ1");
+       window.gtag("config", "G-your_ID");
        window.gtag("event", "Feedback", { sentiment: rating + '/5', page: window.location.pathname, text: notes});
     */
 

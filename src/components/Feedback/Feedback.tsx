@@ -31,6 +31,7 @@ export const Feedback = ({ metadata }: { metadata: any }) => {
       posthog.init('phc_Krs7r8xNYU3OeIItMy5lOoPcTnxJmrX5zYn5JMp2izy', {
         api_host: 'https://app.posthog.com',
         autocapture: false,
+        persistence: 'memory',
       })
       posthog.capture('Feedback', {sentiment: rating + '/5', page: window.location.pathname, text: notes});
 
